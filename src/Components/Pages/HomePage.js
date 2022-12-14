@@ -163,7 +163,7 @@ const HomePage = () => {
 
  async function getJSONTasksAndDisplay() {
     
-  const response = await fetch('/api/taches');
+  const response = await fetch(`${process.env.API_BASE_URL}/taches`);
   const data = await response.json();
 
   
@@ -288,7 +288,7 @@ const HomePage = () => {
       },
     };
   
-    const response = await fetch('/api/taches', jsonOptions);
+    const response = await fetch(`${process.env.API_BASE_URL}/taches`, jsonOptions);
   
     if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
   
@@ -302,7 +302,7 @@ const HomePage = () => {
 
    // Delete task 
   function deleteTask(e) {
-    fetch(`/api/taches/${e}`, {
+    fetch(`${process.env.API_BASE_URL}/taches/${e}`, {
       method: 'DELETE'
     })
     .then(response => response.json());
@@ -311,7 +311,7 @@ const HomePage = () => {
 
   // Valide task 
   function valideTask(e) {
-    fetch(`/api/taches/valide/${e}`, {
+    fetch(`${process.env.API_BASE_URL}/taches/valide/${e}`, {
       method: 'POST'
     })
     .then(response => response.json());
@@ -322,7 +322,8 @@ const HomePage = () => {
 
  async function getJSONEnnemiesAndDisplay() {
     
-  const response = await fetch('/api/auths/readAllEnemies/');
+  const response = await fetch(`${process.env.API_BASE_URL}/auths/readAllEnemies/`);
+
   const data = await response.json();
 
   
@@ -360,7 +361,7 @@ async function fight() {
   const message = document.querySelector('#messageFight');
   fights.innerHTML = 'fight';
   fights.addEventListener('click', () => {
-    fetch('/api/auths/fight', {
+    fetch(`${process.env.API_BASE_URL}/auths/fight`, {
       method: 'POST'
     })
     .then(response => response.json())
@@ -385,7 +386,7 @@ async function login() {
   registerBtn.addEventListener('click', async () => {
     const username = document.querySelector('#usernameL').value;
     const password = document.querySelector('#passwordL').value;
-    const response = await fetch('/api/auths/login', {
+    const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, {
       method: 'POST',
       body: JSON.stringify({
         username,
@@ -409,7 +410,7 @@ async function register() {
   registerBtn.addEventListener('click', async () => {
     const username = document.querySelector('#usernameR').value;
     const password = document.querySelector('#passwordR').value;
-    const response = await fetch('/api/auths/register', {
+    const response = await fetch(`${process.env.API_BASE_URL}/auths/register`, {
       method: 'POST',
       body: JSON.stringify({
         username,
