@@ -410,7 +410,7 @@ async function register() {
   registerBtn.addEventListener('click', async () => {
     const username = document.querySelector('#usernameR').value;
     const password = document.querySelector('#passwordR').value;
-    const response = await fetch(`${process.env.API_BASE_URL}/auths/register`, {
+    const response = await fetch(`${process.env.API_BASE_URL}auths/register`, {
       method: 'POST',
       body: JSON.stringify({
         username,
