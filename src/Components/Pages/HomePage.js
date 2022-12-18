@@ -51,15 +51,11 @@ const homePage = `
           <input type="password" placeholder="Enter Password" name="password" id="passwordR" required>
         </div>
       </div>
-      <div class="form-check">
+      <div class="form-check" style="display: block; margin: 0 auto;">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">
           J'accepte les conditions d'utilisation
-        </label>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="buttonR" >Register</button>
+         </label>
       </div>
     </div>
   </div>
@@ -186,11 +182,7 @@ const homePage = `
     </div>
   </div>
 </div>
-
-<div id="footer">
-<p> Copyright © 2021 Groupe14. Tous droits réservés. </p>
-</div>
-     `;
+`;
 const HomePage = () => {
   const main = document.querySelector('main');
   main.innerHTML = homePage;
