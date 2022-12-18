@@ -183,6 +183,7 @@ const homePage = `
   </div>
 </div>
 `;
+
 const HomePage = () => {
   const main = document.querySelector('main');
   main.innerHTML = homePage;
