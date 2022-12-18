@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../stylesheets/main.css';
-import JSConfetti from 'js-confetti'
+import JSConfetti from 'js-confetti';
 import profileImage from '../../img/avatar.png';
-import {setAuthenticatedUser, /* isAuthenticated */} from '../../utils/auths'
+import { setAuthenticatedUser } from '../../utils/auths';
 
 const homePage = `
 <!-- login modal -->
@@ -14,11 +14,15 @@ const homePage = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="usename" id="usernameL" required>
+        <div class="d-flex flex-column text-center firstPartFormModals">
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="usename" id="usernameL" required>
+        </div>
         <br>
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" id="passwordL" required>
+        <div class="d-flex flex-column text-center secondPartFormModals">
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="passwordL" required>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -37,11 +41,21 @@ const homePage = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="usename" id="usernameR" required>
-        <br>
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" id="passwordR" required>
+        <div class="d-flex flex-column text-center firstPartFormModals">
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="usename" id="usernameR" required>
+          <br>
+        </div>
+        <div class="d-flex flex-column text-center secondPartFormModals">
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="passwordR" required>
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          J'accepte les conditions d'utilisation
+        </label>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -60,11 +74,20 @@ const homePage = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut odio sed diam dictum mattis sit amet nec eros. Cras quis leo blandit, molestie ligula vel, tempor libero. Phasellus vulputate nibh lorem, eget malesuada odio ullamcorper ac. Pellentesque ac dui fringilla, consequat nunc sed, efficitur lectus. Sed dignissim pharetra magna et finibus. Cras lacus velit, aliquet at pellentesque eget, pharetra dapibus lectus. Donec feugiat, tortor ullamcorper lobortis gravida, odio massa convallis libero, venenatis feugiat metus dui in quam. Aliquam sit amet odio sed tellus porta sollicitudin eget eu tellus. Suspendisse a finibus risus, sed ornare elit.</p>
-        <p>Sed mattis, nunc sed accumsan rutrum, ipsum nibh feugiat dolor, sit amet dictum nisl arcu et lorem. Nullam imperdiet, massa vitae semper aliquet, tellus lorem tincidunt tortor, at feugiat arcu felis eu sem. Phasellus ornare mi vitae nulla feugiat, at efficitur massa semper. Maecenas quis odio eros. Curabitur id mollis diam. Maecenas blandit urna felis. Vestibulum euismod odio nec leo tincidunt, quis faucibus metus efficitur. Pellentesque tincidunt dolor hendrerit eleifend condimentum. Integer sem orci, gravida eget eleifend at, commodo sed eros. Nunc fermentum augue ex, a fermentum lacus tempor sed. Proin condimentum purus eget efficitur rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce eu urna enim. Praesent eu arcu vitae neque mollis vulputate ac consequat ex.</p>
-        <p>Ut consequat auctor commodo. Praesent pulvinar malesuada vulputate. Duis faucibus pulvinar elit, nec lacinia lectus malesuada a. Nam tincidunt justo ut vestibulum gravida. Praesent tincidunt odio cursus libero vestibulum, at placerat odio ultrices. Sed vestibulum, purus vel dictum semper, enim eros fringilla nibh, id suscipit enim metus eu erat. Nunc convallis ut nisi at vulputate. Quisque accumsan, urna sit amet pellentesque interdum, erat massa lobortis erat, quis tincidunt tellus nisl quis eros. Quisque metus erat, varius non est venenatis, cursus semper turpis.</p>
-        <p>Sed commodo sem at interdum faucibus. Ut fermentum gravida metus pellentesque congue. Donec eu velit in nisl iaculis molestie at id dui. Curabitur magna arcu, placerat quis interdum vitae, congue sit amet turpis. Morbi placerat rhoncus nulla, id dictum nibh commodo iaculis. Nulla sagittis, lectus sit amet consequat euismod, nunc est tincidunt erat, nec efficitur dui sapien id nibh. Sed lacinia ac justo ac hendrerit. In odio nisl, pulvinar at consequat vitae, posuere nec lectus. Nam eu purus purus. Cras id venenatis mauris. Morbi sagittis ex vel erat pellentesque, sit amet consequat metus efficitur.</p>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque euismod dapibus metus, a consectetur erat dictum at. Aliquam eleifend at nunc sed sollicitudin. Sed molestie velit quis malesuada mollis. Donec tristique molestie ipsum, vitae dictum tortor elementum rutrum. Nam et nisl imperdiet nunc ullamcorper fermentum. Cras nec odio justo. Donec non mi nec enim dictum facilisis. In sagittis bibendum augue maximus convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <p>Bienvenu sur notre application ! </p>
+        <p>Tu te demandes comment ToDo fonctionne ?</p>
+        <p>Commence par te connecter ou t'enregistrer si ce n'est pas encore fait :).</p>
+        <p>Une fois inscrit, tu pourras commencer a ajouter des taches a ta liste de taches. En fonction du niveau de difficulté de la tache, tu lui assigneras un niveau. </p>
+        <p> Maintenant, ajoute une premiere tache :), dans la liste tu verras apparaitre la tache que tu viens d ajouter.</p>
+        <p>Tu pourras alors soit decider de la supprimer soit de cliquer dessus afin d'afficher son contenu.</p>
+        <p>oui bon, un site de tache ... tu dois te dire que c est classique et qu'il y a rien d'original ! </p>
+        <p>Dans la barre de navigation en haut a droite, clique sur le menu déroulant ;) </p>
+        <p>ahhhh, tu commences a comprendre :) Et oui, en faite a l'inscription tu as creer un personnage combatant !</p>
+        <p>Ton personnage combatant possède des points de vie et d'attaques ainsi qu'un niveau. Au départ, tu t'en doute surement mais tu commenceras au niveau 1.</p>
+        <p>Chaque fois que tu valideras une taches, tu gagneras de l'XP et de l'HP.</p>
+        <p>Tu as aussi pu remarquer en ouvrant la liste déroulante qu'un tableau d'ennemis etait present. Au fur et a mesure que tu valideras des taches, tu auras la possibilité de combattre des ennemis ! </p>
+        <p>Oui, ce tutoriel est déja finis :) , qu'est ce que tu attends pour commencer de nouvelles taches !  </p>
+        <p>A toi de jouer !!! </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -125,6 +148,7 @@ const homePage = `
       <button type="button" class="btn btn-primary" id="valideTaskButtonID" style="display:none" ></button>
   </div>
   </div>
+
   <!-- right part -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
@@ -137,33 +161,40 @@ const homePage = `
       <table id="table-ennemis" >
       </table>
       <p id="messageFight" > Pret a combatre ?</p>
-      <input class="mt-3 btn btn-primary" type="button" value="Combattez !" id="fight-btn">
+      <input class="mt-3 btn btn-primary" type="button" value="Combattez !" id="fight-btn" >
       </div>
+
     <div class="pt-3" id="innerColRight2">
-      <div id="userPicture">
+      <h4 class="text-left pb-3">Votre personnage</h4>
+      
+      <div class="mb-3" id="userPicture">
       </div>
-      <div id="progressesBar">
-        <p class="mb-1"><u>Point de vie :</u></p>
-        <div class=" progress mb-3">
-          <div id="barHP" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Success example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-        </div>
-        <p class="mb-1"><u>Point d'XP :</u></p>
-        <div class="progress">
-          <div id="barXP" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Warning example" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+      <div id="niveauJoeur" > <p id="level" class="box" ></p> <p id="coeur" ></p> </div>
+      <div><p id="degat"></p><p id="bombe" ></p> </div>
+      <div id= "barre">
+        <div id="progressesBar">
+          <p class="mb-1" id="pdv" ><u>Point de vie :</u></p><p id="vie" ></p>
+          <div class=" progress mb-3">
+            <div id="barHP" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Success example" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="mb-1" id="xp"><u>Point d'XP :</u></p><p id="progres" ></p>
+          <div class="progress">
+            <div id="barXP" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Warning example" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
       </div>
     </div>
-    <div><p id="level"></p> </div>
-    <div><p id="degat"></p> </div>
   </div>
-  </div>
+</div>
+
+<div id="footer">
+<p> Copyright © 2021 Groupe14. Tous droits réservés. </p>
 </div>
      `;
 const HomePage = () => {
-  
   const main = document.querySelector('main');
   main.innerHTML = homePage;
-  
+
   login();
   register();
   getJSONTasksAndDisplay();
@@ -174,68 +205,72 @@ const HomePage = () => {
 
   const photoUser = document.getElementById('userPicture');
   renderProfileImage(photoUser, profileImage, 'test');
-  
- async function getJSONTasksAndDisplay() {
-  const table = document.querySelector('table');
-  table.innerHTML = '';
-  const response = await fetch(`${process.env.API_BASE_URL}/taches`);
-  const data = await response.json();
-  
-  // Create a table element
-  
-  table.className="m-auto";
-  // eslint-disable-next-line no-restricted-syntax
-  for(const key of Object.keys(data)) {
-    const button = document.getElementById("valideTaskButtonID");
-    const row = document.createElement('tr');
-    const valueCel = document.createElement('td');
-    const valueCelDelete = document.createElement('button');
-    valueCel.datavalue = data[key];
-    valueCel.textContent = JSON.stringify(data[key].title).replace(/['"]+/g, '');
-    valueCelDelete.innerHTML = '<span><i class="bi bi-x-circle"></i></span>';
-    valueCelDelete.className = "btn";
-    valueCelDelete.id = "td2";
-    valueCelDelete.datavalue = data[key].id;
-    button.datavalue = data[key].id;
-    let buttonId = null;
 
-    row.appendChild(valueCel);
-    row.appendChild(valueCelDelete);
-    table.appendChild(row);
+  async function getJSONTasksAndDisplay() {
+    const table = document.querySelector('table');
+    table.innerHTML = '';
+    const response = await fetch(`${process.env.API_BASE_URL}/taches`);
+    const data = await response.json();
 
-    
-    
-    // delete the task 
-    // eslint-disable-next-line func-names
-    valueCelDelete.addEventListener("click", function() { 
-      deleteTask(this.datavalue);
-      HomePage();
-    });
-    // Display the task title, content
-    // eslint-disable-next-line func-names
-    valueCel.addEventListener("click", function() { 
-      document.getElementById("tache").innerText = "Tâche Selectionée : ";
-      document.getElementById("contenu").innerText = "Contenu de la tache : ";
-      document.getElementById("valideTaskButtonID").value = "valider la tache !";
-      document.getElementById("valideTaskButtonID").style.display = "block";
-      document.getElementById("displayTache").innerHTML = this.datavalue.title;
-      document.getElementById("displayContenu").innerHTML = this.datavalue.content;
-      document.getElementById("valideTaskButtonID").innerHTML = "Valider la tâche !" ;
-      document.getElementById("valideTaskButtonID").className = "btn btn-primary text-justify";
-      buttonId = this.datavalue.id;
-    });
-    
-    button.addEventListener("click", () => {
-      const jsConfetti = new JSConfetti({ button })
-      valideTask(buttonId);
-      deleteTask(buttonId);
-      jsConfetti.addConfetti();
-      HomePage();
-    });
-    
+    // Create a table element
+
+    table.className = 'm-auto';
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of Object.keys(data)) {
+      const button = document.getElementById('valideTaskButtonID');
+      const row = document.createElement('tr');
+      const valueCel = document.createElement('td');
+      const valueCelDelete = document.createElement('button');
+      valueCel.datavalue = data[key];
+      valueCel.textContent = JSON.stringify(data[key].title).replace(/['"]+/g, '');
+      valueCel.style.border = '1px solid transparent';
+      valueCel.style.borderBottom = '1px solid black';
+      valueCelDelete.innerHTML = '<span><i class="bi bi-x-circle"></i></span>';
+      valueCelDelete.className = 'btn';
+      valueCelDelete.id = 'td2';
+      valueCelDelete.datavalue = data[key].id;
+      valueCelDelete.style.border = '1px solid transparent';
+      button.datavalue = data[key].id;
+      let buttonId = null;
+
+      row.appendChild(valueCel);
+      row.appendChild(valueCelDelete);
+      table.appendChild(row);
+
+      // delete the task
+      // eslint-disable-next-line func-names
+      valueCelDelete.addEventListener('click', function() {
+        deleteTask(this.datavalue);
+        HomePage();
+      });
+      // Display the task title, content
+      // eslint-disable-next-line func-names
+      valueCel.addEventListener('click', function() {
+        document.getElementById('tache').innerText = 'Tâche Selectionée : ';
+        document.getElementById('contenu').innerText = 'Contenu de la tache : ';
+        document.getElementById('valideTaskButtonID').value = 'valider la tache !';
+        document.getElementById('valideTaskButtonID').style.display = 'block';
+        document.getElementById('displayTache').innerHTML = this.datavalue.title;
+        document.getElementById('displayTache').className =
+          ' p-3 text-justify shadow mb-5 bg-body rounded text-justify';
+        document.getElementById('displayContenu').innerHTML = this.datavalue.content;
+        document.getElementById('displayContenu').className =
+          ' p-3 text-justify shadow mb-5 bg-body rounded text-justify';
+        document.getElementById('valideTaskButtonID').innerHTML = 'Valider la tâche !';
+        document.getElementById('valideTaskButtonID').className = 'btn btn-primary text-justify';
+        buttonId = this.datavalue.id;
+      });
+
+      button.addEventListener('click', () => {
+        const jsConfetti = new JSConfetti({ button });
+        valideTask(buttonId);
+        deleteTask(buttonId);
+        jsConfetti.addConfetti();
+        HomePage();
+      });
+    }
   }
-}
-  
+
   function renderTaskForm() {
     const divForm = document.getElementById('innerColLeft2');
     const form = document.createElement('form');
@@ -288,208 +323,222 @@ const HomePage = () => {
     form.appendChild(submit);
     divForm.appendChild(form);
     form.addEventListener('submit', addTask);
-    
   }
 
-  // Add task 
+  // Add task
   async function addTask(e) {
     e.preventDefault();
-  
+
     const title = document.querySelector('#title').value;
     const content = document.querySelector('#content').value;
     const difficulte = document.querySelector('#select').value;
-  
+
     const jsonOptions = {
       method: 'POST',
       body: JSON.stringify({
         title,
         content,
-        difficulte
+        difficulte,
       }),
       headers: {
         'Content-Type': 'application/json',
       },
     };
-  
+
     const response = await fetch(`${process.env.API_BASE_URL}/taches`, jsonOptions);
-  
+
     if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
-  
+
     const newTask = await response.json();
-    
+
     HomePage();
     // eslint-disable-next-line no-console
-    console.log('task add : ',newTask);
-  
+    console.log('task add : ', newTask);
   }
 
-   // Delete task 
+  // Delete task
   function deleteTask(e) {
     fetch(`${process.env.API_BASE_URL}/taches/${e}`, {
-      method: 'DELETE'
-    })
-    .then(response => response.json());
+      method: 'DELETE',
+    }).then((response) => response.json());
   }
-  // Valide task 
+  // Valide task
   function valideTask(e) {
     fetch(`${process.env.API_BASE_URL}/valide/${e}`, {
-      method: 'POST'
-    })
-    .then(response => response.json());
+      method: 'POST',
+    }).then((response) => response.json());
   }
-// ------------------------------------ENNEMIS TABLE ---------------------------------------
- async function getJSONEnnemiesAndDisplay() {
-    
-  const response = await fetch(`${process.env.API_BASE_URL}/auths/readAllEnemies/`);
-  const data = await response.json();
-  
-  // Create a table element
-  const table = document.getElementById('table-ennemis');
-  table.innerHTML = "";
-  // eslint-disable-next-line no-restricted-syntax
-  for(const key of Object.keys(data)) {
-    const row = document.createElement('tr');
-    const valueCel = document.createElement('td');
-    const valueCelHP = document.createElement('td');
-    const valueCelAttack = document.createElement('td');
-    
-    valueCel.datavalue = data[key];
-    valueCel.textContent = JSON.stringify(data[key].name);
-    valueCelHP.datavalue  = data[key];
-    valueCelHP.textContent = "HP : "
-    valueCelHP.textContent += JSON.stringify(data[key].HP);
-    valueCelAttack.datavalue  = data[key];
-    valueCelAttack.textContent = "Attack : "
-    valueCelAttack.textContent += JSON.stringify(data[key].attack);
-    row.appendChild(valueCel);
-    row.appendChild(valueCelHP);
-    row.appendChild(valueCelAttack);
-    table.appendChild(row);
+  // ------------------------------------ENNEMIS TABLE ---------------------------------------
+  async function getJSONEnnemiesAndDisplay() {
+    const response = await fetch(`${process.env.API_BASE_URL}/auths/readAllEnemies/`);
+    const data = await response.json();
+
+    // Create a table element
+    const table = document.getElementById('table-ennemis');
+    table.innerHTML = '';
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of Object.keys(data)) {
+      const row = document.createElement('tr');
+
+      const valueCel = document.createElement('td');
+      const valueCelHP = document.createElement('td');
+      const valueCelAttack = document.createElement('td');
+
+      valueCel.datavalue = data[key];
+      valueCel.textContent = JSON.stringify(data[key].name).replace(/['"]+/g, '');
+      valueCel.style.border = '1px solid transparent';
+      valueCel.style.borderBottom = '1px solid black';
+      valueCel.style.margin = '10px';
+      valueCelHP.datavalue = data[key];
+      valueCelHP.textContent = 'HP : ';
+      valueCelHP.textContent += JSON.stringify(data[key].HP);
+      valueCelHP.style.border = '1px solid transparent';
+      valueCelHP.style.borderBottom = '1px solid black';
+      valueCelHP.style.padding = '10px';
+      valueCelAttack.datavalue = data[key];
+      valueCelAttack.textContent = 'Attack : ';
+      valueCelAttack.textContent += JSON.stringify(data[key].attack);
+      valueCelAttack.style.border = '1px solid transparent';
+      valueCelAttack.style.borderBottom = '1px solid black';
+      valueCelAttack.style.margin = '10px';
+      row.appendChild(valueCel);
+      row.appendChild(valueCelHP);
+      row.appendChild(valueCelAttack);
+      table.appendChild(row);
+    }
   }
-}
-// fight button 
-async function fight() {
-  const fights = document.getElementById('fight-btn');
-  const message = document.querySelector('#messageFight');
-  fights.innerHTML = 'fight';
-  fights.addEventListener('click', () => {
-    fetch(`${process.env.API_BASE_URL}/auths/fight`, {
-      method: 'POST'
-    })
-    .then(response => response.json())
-    .then(result => {
-      message.innerHTML = result;
+  // fight button
+  async function fight() {
+    const fights = document.getElementById('fight-btn');
+    const message = document.querySelector('#messageFight');
+    fights.innerHTML = 'fight';
+    fights.addEventListener('click', () => {
+      fetch(`${process.env.API_BASE_URL}/auths/fight`, {
+        method: 'POST',
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          message.innerHTML = result;
+          setTimeout(() => {
+            message.innerHTML = 'Pret a combatre ?';
+          }, 9000);
+        });
       setTimeout(() => {
-        message.innerHTML = 'Pret a combatre ?';
-      }, 9000);
+        HomePage();
+      }, 2000);
     });
-    setTimeout(() => {
-      HomePage();}, 2000);
-  });
-}
+  }
 
-async function updateProgressBar() {
-  const response = await fetch(`${process.env.API_BASE_URL}/playerCharacters/player`);
-  const player = await response.json();
-  const playerHP  = player.currentHP;
-  const playerXP = player.currentXP;
-  const playerLevel = player.level;
-  const maxHpPlayer = player.maxHP;
-  const {XPToLvlUp} = player;
-  const degats = player.attack;
- 
+  async function updateProgressBar() {
+    const response = await fetch(`${process.env.API_BASE_URL}/playerCharacters/player`);
+    const player = await response.json();
+    const playerHP = player.currentHP;
+    const playerXP = player.currentXP;
+    const playerLevel = player.level;
+    const maxHpPlayer = player.maxHP;
+    const { XPToLvlUp } = player;
+    const degats = player.attack;
 
-  const progressBarHP = document.getElementById("barHP");
-  const progressBarXP = document.getElementById("barXP");
+    const progressBarHP = document.getElementById('barHP');
+    const progressBarXP = document.getElementById('barXP');
 
+    progressBarHP.innerText = `${playerHP}/${maxHpPlayer}`;
+    progressBarHP.setAttribute('style', `width: ${(playerHP / maxHpPlayer) * 100}%`);
+    progressBarHP.setAttribute('aria-valuenow', `${playerHP}`);
+    progressBarHP.setAttribute('aria-valuemax', `${maxHpPlayer}`);
 
-  progressBarHP.innerText= `${playerHP}/${maxHpPlayer}`;
-  progressBarHP.setAttribute("style", `width: ${(playerHP / maxHpPlayer) * 100}%`);
-  progressBarHP.setAttribute("aria-valuenow", `${playerHP}`);
-  progressBarHP.setAttribute("aria-valuemax", `${maxHpPlayer}`);
-  
-  const splitHp = `${XPToLvlUp}`.slice(0,5);
-  progressBarXP.innerText= `${playerXP}/${splitHp}`;
-  progressBarXP.setAttribute("style", `width: ${(playerXP / XPToLvlUp) * 100}%`);
-  progressBarXP.setAttribute("aria-valuenow", `${playerXP}`);
-  progressBarHP.setAttribute("aria-valuemax", `${XPToLvlUp}`);
+    const splitHp = `${XPToLvlUp}`.slice(0, 5);
+    progressBarXP.innerText = `${playerXP}/${splitHp}`;
+    progressBarXP.setAttribute('style', `width: ${(playerXP / XPToLvlUp) * 100}%`);
+    progressBarXP.setAttribute('aria-valuenow', `${playerXP}`);
+    progressBarHP.setAttribute('aria-valuemax', `${XPToLvlUp}`);
 
-  
- 
-  const level = document.getElementById("level");
-  const degat = document.getElementById("degat");
-  level.innerText = `Vous etes niveau ${playerLevel} ` ;
-  degat.innerText = `Vous avez ${degats} points de dégats`;
-  
-}
+    const progressesBar = document.getElementById('barre');
+    progressesBar.style.paddingTop = '50px';
 
+    const level = document.getElementById('level');
+    const degat = document.getElementById('degat');
+    const coeur = document.getElementById('coeur');
 
-// render the profile image (to resize it you can use the height parameter)
-function renderProfileImage(wrapper, url) {
-  const image = new Image();
-  image.src = url;
-  image.height = 100;
-  image.class = "img-fluid img-thumbnail";
-  wrapper.appendChild(image);
-}
-async function login() {
-  const registerBtn = document.getElementById('buttonL');
-  registerBtn.addEventListener('click', async () => {
-    const username = document.querySelector('#usernameL').value;
-    const password = document.querySelector('#passwordL').value;
-    const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, {
-      method: 'POST',
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    level.style.display = 'inline-block';
+    coeur.style.display = 'inline-block';
+    coeur.innerHTML = '&#x1F3C6;';
+    level.innerText = `Vous etes niveau ${playerLevel} `;
+    degat.innerText = `Vous avez ${degats} points de dégats`;
+
+    const userPicture = document.getElementById('userPicture');
+    const niveauJouer = document.getElementById('niveauJouer');
+    userPicture.style.float = 'left';
+    niveauJouer.style.float = 'left';
+  }
+
+  // render the profile image (to resize it you can use the height parameter)
+  function renderProfileImage(wrapper, url) {
+    const image = new Image();
+    image.src = url;
+    image.height = 100;
+    image.class = 'img-fluid img-thumbnail';
+    wrapper.appendChild(image);
+  }
+  async function login() {
+    const registerBtn = document.getElementById('buttonL');
+    registerBtn.addEventListener('click', async () => {
+      const username = document.querySelector('#usernameL').value;
+      const password = document.querySelector('#passwordL').value;
+      const response = await fetch(`${process.env.API_BASE_URL}/auths/login`, {
+        method: 'POST',
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok)
+        throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
+
+      const user = response.json;
+
+      setAuthenticatedUser(user);
+      const modalL = document.getElementById('loginModal');
+      // eslint-disable-next-line no-undef
+      const modal = bootstrap.Modal.getInstance(modalL);
+      modal.hide();
+      // window.location.reload();
+      HomePage();
     });
-    if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
+  }
 
-    const user = response.json;
+  async function register() {
+    const registerBtn = document.getElementById('buttonR');
+    registerBtn.addEventListener('click', async () => {
+      const username = document.querySelector('#usernameR').value;
+      const password = document.querySelector('#passwordR').value;
+      const response = await fetch(`${process.env.API_BASE_URL}/auths/register`, {
+        method: 'POST',
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok)
+        throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
 
-    setAuthenticatedUser(user);
-    const modalL = document.getElementById('loginModal');
-    // eslint-disable-next-line no-undef
-    const modal = bootstrap.Modal.getInstance(modalL)
-    modal.hide();
-    // window.location.reload();
-    HomePage();
-  });
-}
+      const user = response.json;
 
-async function register() {
-  const registerBtn = document.getElementById('buttonR');
-  registerBtn.addEventListener('click', async () => {
-    const username = document.querySelector('#usernameR').value;
-    const password = document.querySelector('#passwordR').value;
-    const response = await fetch(`${process.env.API_BASE_URL}/auths/register`, {
-      method: 'POST',
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      setAuthenticatedUser(user);
+      // window.location.reload();
+      const modalR = document.getElementById('staticBackdrop2');
+      // eslint-disable-next-line no-undef
+      const modal = bootstrap.Modal.getInstance(modalR);
+      modal.hide();
+      HomePage();
     });
-    if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
-
-    const user = response.json;
-
-    setAuthenticatedUser(user);
-    // window.location.reload();
-    const modalR = document.getElementById('staticBackdrop2');
-    // eslint-disable-next-line no-undef
-    const modal = bootstrap.Modal.getInstance(modalR)
-    modal.hide();
-    HomePage();
-
-  });
-}
-// FIN  
+  }
+  // FIN
 };
 export default HomePage;

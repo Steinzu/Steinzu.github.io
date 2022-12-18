@@ -10,7 +10,6 @@ main{
     flex: 1 0 auto;
 }
 
-
 #header{
     background-color: #ecd977d5;
     z-index: 1000;
@@ -25,6 +24,17 @@ main{
     
 }
 
+.firstPartFormModals{
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.secondPartFormModals{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom : 5%;
+}
 
 #colonneLeft{
 
@@ -61,6 +71,14 @@ main{
 table tr td  {
     border: 1px solid black;
   }
+
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 11%;
+  }
+  
 
 /*.colonne{
 margin-left: 1%;
